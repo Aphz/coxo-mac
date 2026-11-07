@@ -17,6 +17,8 @@ inferencia. Las fuentes `[Fn]` son las de `docs/research/inventario-coxo.md`; la
 - Hardware disponible:
   - MacBook Pro 15" 2017 (MacBookPro14,3): i7 de 7ª generación, Radeon Pro 560, 16 GB de RAM, macOS 13, Thunderbolt 3. [C]
   - Un segundo MacBook Pro, modelo sin confirmar. [S]
+  - Verificado 2026-11-07 con `system_profiler`: este MBP (i7 4 núcleos a 3,1 GHz) tiene Intel HD 630 + **Radeon Pro 560 4 GB, sin NVIDIA**. [C]
+    Si Nicolás recuerda "i7 3 GHz con NVIDIA", puede ser el otro MBP; los últimos MBP con NVIDIA (2012–2014, GT 650M/750M) quedan muy por debajo de una RTX 4060 y sin drivers modernos, así que tampoco sirven sin eGPU. [S]
   - El ThinkPad que hoy corre la app; su GPU está sin confirmar. [S]
 - El laboratorio usa exocad y recibe STL por correo. [C] origen; [S] flujo exacto
 

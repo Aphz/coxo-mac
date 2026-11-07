@@ -42,3 +42,10 @@ Nicolás la opera a veces desde el DentalPad por sesión remota, así que puede 
    Modelo del otro MacBook Pro (Intel o Apple Silicon) y si te sirve reiniciar el Mac en Windows para escanear.
 
 Los archivos 3–5 van a una carpeta fuera del repo (p. ej. iCloud/AirDrop); acá solo hashes y notas.
+
+## 2026-11-07 — Aclaración GPU del MacBook Pro
+- Nicolás creía que su MacBook tiene i7 de 3 GHz con NVIDIA dedicada. Verificado con `system_profiler` en este Mac:
+  MacBookPro14,3 (15" 2017), i7 4 núcleos 3,1 GHz, **Intel HD 630 + AMD Radeon Pro 560 4 GB — sin NVIDIA**.
+- Puede referirse al otro MacBook Pro. Ningún MBP vino con una NVIDIA útil para esta app (los últimos con NVIDIA,
+  2012–2014, traen GT 650M/750M, muy por debajo de RTX 4060 y sin drivers actuales). La opción C (Boot Camp en
+  este MBP) sigue necesitando eGPU NVIDIA. Reevaluar cuando llegue el modelo del otro MacBook (pedido 7).
