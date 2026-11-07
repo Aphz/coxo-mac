@@ -49,3 +49,12 @@ Los archivos 3–5 van a una carpeta fuera del repo (p. ej. iCloud/AirDrop); ac�
 - Puede referirse al otro MacBook Pro. Ningún MBP vino con una NVIDIA útil para esta app (los últimos con NVIDIA,
   2012–2014, traen GT 650M/750M, muy por debajo de RTX 4060 y sin drivers actuales). La opción C (Boot Camp en
   este MBP) sigue necesitando eGPU NVIDIA. Reevaluar cuando llegue el modelo del otro MacBook (pedido 7).
+
+## 2026-11-07 — Pedido 1 recibido (versión y modelo)
+- Modelo confirmado por Nicolás: **COXO DL-300P**.
+- App en el DentalPad (pantalla *Información de Versión*, en español): versión `V1`, compilación
+  `20250612_2496_release`, fecha de actualización 2025-06-20.
+- Es **anterior** a los builds publicados hoy en coxotec.com/download (`20250612_2584` Standard y
+  `20250612_2728_release` ortodoncia). "V1" es solo la etiqueta: el número de build sigue avanzando, así que la
+  app no está abandonada. No actualizar sin OK: los builds nuevos exigen un driver NVIDIA específico (576.x/581.42).
+- Iconos de la barra superior: cuenta, soporte remoto, nube/sincronización y Wi-Fi (la app depende de la red).

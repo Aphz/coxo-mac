@@ -215,3 +215,8 @@ Nada de lo siguiente es irreversible. Al compartir capturas, **tapar el número 
 - [F18] Fin de CUDA y de los drivers NVIDIA en macOS: https://mjtsai.com/blog/?p=27347 · https://forums.developer.nvidia.com/t/when-will-the-nvidia-web-drivers-be-released-for-macos-mojave-10-14/65895/1429
 - [F19] Boot Camp en MBP 2017 (Windows 10; Windows 11 sin TPM): https://discussions.apple.com/thread/8010209 · https://communities.apple.com/fr/thread/255727448
 - [F20] eGPU en Boot Camp con MBP 15" y "error 12": https://georgegarside.com/blog/technology/boot-camp-windows-2004-egpu-macbook-pro-15-inch · https://egpu.io/automate-eGPU-EFI
+
+## Anexo 2026-11-07 — Datos confirmados en el DentalPad
+- Modelo: **DL-300P** [C] (Nicolás).
+- Build instalado: `20250612_2496_release`, versión mostrada `V1`, actualizado 2025-06-20 [C] (captura de *Información de Versión*).
+- Publicados por COXO: `20250612_2584` (Standard) y `20250612_2728_release` (ortodoncia) [C] [F6], o sea que hay builds más nuevos.
