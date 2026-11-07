@@ -1,0 +1,8 @@
+*.exe
+*.msi
+*.dll
+*.sys
+*.pcap*
+*.bin
+node_modules/
+.DS_Store
