@@ -220,3 +220,26 @@ Nada de lo siguiente es irreversible. Al compartir capturas, **tapar el número 
 - Modelo: **DL-300P** [C] (Nicolás).
 - Build instalado: `20250612_2496_release`, versión mostrada `V1`, actualizado 2025-06-20 [C] (captura de *Información de Versión*).
 - Publicados por COXO: `20250612_2584` (Standard) y `20250612_2728_release` (ortodoncia) [C] [F6], o sea que hay builds más nuevos.
+
+## Anexo 2026-11-07 — Estructura de `C:\IOscanner` (DentalPad, build 2496) [C]
+Carpetas de primer nivel: `MindVisionSDK`, `Plugin`, `StartLog`, `Version2496`. Solo se registran nombres y tamaños; no se copió ningún binario.
+
+**Cámaras:** usa el **MindVision SDK** (cámaras industriales Huateng Vision). Drivers `MindVisionSDK\Drivers\USB\WIN10\MvU2Camera.inf`
+(USB) y también GigE (`MvGigeDriver*.inf`, probablemente no se usan). Conclusión: **no es UVC**. El escáner lleva cámaras industriales
+MindVision USB 3 con driver de kernel propio. [S] fuerte: pendiente confirmar con el VID/PID (pedido 4).
+
+**App de escaneo:** Unity con **Mono**, no IL2CPP: existe `Version2496\Unity\IOApp_Data\Managed\Assembly-CSharp.dll` (5,3 MB).
+Se puede analizar con las herramientas .NET de REA (IL, `ldstr`, P/Invoke).
+
+**Stack GPU (NVIDIA obligatorio):**
+| Componente | Archivos | Para qué [S] |
+|---|---|---|
+| CUDA runtime | `cudart64_42_9`, `_100`, `_110`, `_12` | varias generaciones de CUDA en paralelo |
+| cuBLAS 12 | `cublas64_12` (114 MB), `cublasLt64_12` (692 MB) | álgebra lineal |
+| cuDNN 8 | `cudnn*64_8` (~1,1 GB en total) | redes neuronales |
+| **TensorRT 10** | `nvinfer_10`, `nvinfer_lean_10`, `nvinfer_plugin_10`, `nvonnxparser_10`, `nvinfer_builder_resource_10` (~2 GB) | inferencia de IA (modelos ONNX → TensorRT): segmentación o limpieza |
+| Propios de Launca | `CudaIcp.dll`, `IOMultiStreamCudaICP.dll` (+ copia en Plugins), `IOCudaDeblur.dll` (64 MB), `IOCudaPoissonNewVersion.dll` (18 MB) | registro ICP, desenfoque, reconstrucción de superficie Poisson |
+| OpenCV | 2.2.0 y 2.4.9 (`opencv_*249`), `OpenCvSharpExtern.dll` (wrapper de C#) | visión clásica y calibración |
+
+**Implicancia:** la reconstrucción depende de CUDA, cuDNN y TensorRT, todas bibliotecas exclusivas de NVIDIA, sin equivalente en macOS. Esto confirma
+que A y B no sirven para escanear y que D (reimplementación nativa) significaría reescribir ICP, Poisson, deblur y la IA.

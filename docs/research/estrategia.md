@@ -183,3 +183,8 @@ Los STL o PLY llegan por carpeta compartida (SMB) o por la nube Launca. Opcional
 
 - [G1] Fin del desarrollo de Whisky (abril de 2025): https://heise.de/-10355657 · https://forums.appleinsider.com/discussion/239965
 - [G2] CrossOver 27 deja los Mac Intel: https://www.parallels.com/blogs/crossover-drops-intel-mac-support-what-it-means-for-you/ · requisitos: https://www.codeweavers.com/products/crossover-mac/requirements
+
+> **Actualización 2026-11-07 (listado de `C:\IOscanner`):** la reconstrucción usa CUDA, cuBLAS, cuDNN 8 y **TensorRT 10**, más DLLs CUDA
+> propias (ICP, Poisson, deblur). Las cámaras son MindVision USB con driver propio (no UVC) y la UI es Unity Mono. Esto **refuerza** el
+> ADR: A y B quedan descartadas, D sería reescribir el pipeline completo (solo tiene sentido como experimento de captura de cámaras
+> MindVision), y la recomendación sigue siendo E ahora y C2 (eGPU NVIDIA modesta) si se quiere un Mac.

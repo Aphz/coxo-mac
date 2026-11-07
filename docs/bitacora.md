@@ -79,3 +79,10 @@ Los archivos 3–5 van a una carpeta fuera del repo (p. ej. iCloud/AirDrop); ac�
   vive en plugins nativos (`*_Data\Plugins\x86_64\*.dll`), y ahí está la dependencia CUDA. Unity tiene exportación nativa a macOS, pero
   eso solo le sirve a Launca, que tiene el código fuente; para nosotros no aplica.
 - En el DentalPad también corre **exocad DentalCAD 9036** (`C:\Exocad-9036-FR\...\DentalShareUpload.exe`), así que el diseño CAD está en el mismo PC.
+
+## 2026-11-07 — Pedido 3: listado resumido de `C:\IOscanner`
+- Escaneo en **Unity Mono** (`Assembly-CSharp.dll`, analizable con REA). Cámaras **MindVision** USB (`MvU2Camera.inf`), no UVC.
+- Stack NVIDIA completo: CUDA 4.2–12, cuBLAS 12, cuDNN 8, **TensorRT 10** y DLLs propias `CudaIcp`, `IOMultiStreamCudaICP`,
+  `IOCudaDeblur` e `IOCudaPoissonNewVersion`. Detalle en el anexo de `inventario-coxo.md`.
+- El CSV completo falló porque `$HOME\Desktop` no existe (el Escritorio está redirigido, probablemente a OneDrive). Se repite con
+  `[Environment]::GetFolderPath('Desktop')`.
