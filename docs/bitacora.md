@@ -67,3 +67,6 @@ Los archivos 3–5 van a una carpeta fuera del repo (p. ej. iCloud/AirDrop); ac�
   mínimo duro; lo que importa es tener **NVIDIA/CUDA**, no el modelo exacto. [S] fuerte (pendiente: ¿escanea fluido?)
 - Consecuencia para el ADR: la opción C (eGPU) se abarata, porque una NVIDIA modesta (Turing o posterior, 4 GB)
   podría bastar. La opción E sigue siendo la base: el DentalPad ya funciona.
+- Rendimiento con la T1000 (Nicolás): escaneo **fluido** y procesado de modelos de **1 a 2 min**, sin problemas. Hubo fallas puntuales
+  en módulos de **implantes** (scanbody/`upperimplant`), que parecen de software y no de GPU. Confirma que una NVIDIA de
+  gama de entrada basta para uso clínico real.
