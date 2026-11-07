@@ -19,7 +19,8 @@ inferencia. Las fuentes `[Fn]` son las de `docs/research/inventario-coxo.md`; la
   - Un segundo MacBook Pro, modelo sin confirmar. [S]
   - Verificado 2026-11-07 con `system_profiler`: este MBP (i7 4 núcleos a 3,1 GHz) tiene Intel HD 630 + **Radeon Pro 560 4 GB, sin NVIDIA**. [C]
     Si Nicolás recuerda "i7 3 GHz con NVIDIA", puede ser el otro MBP; los últimos MBP con NVIDIA (2012–2014, GT 650M/750M) quedan muy por debajo de una RTX 4060 y sin drivers modernos, así que tampoco sirven sin eGPU. [S]
-  - El ThinkPad que hoy corre la app; su GPU está sin confirmar. [S]
+  - El ThinkPad que hoy corre la app: **ThinkPad P15 Gen 1, NVIDIA Quadro T1000 4 GB** (Turing), driver 595.71 / CUDA 13.2. [C] 2026-11-07.
+    Que la app funcione con esta GPU muestra que "RTX 4060+" es una recomendación: basta con una NVIDIA/CUDA modesta, lo que abarata la opción C2 (eGPU). [S] fuerte
 - El laboratorio usa exocad y recibe STL por correo. [C] origen; [S] flujo exacto
 
 **El problema de fondo no es Windows ni x86. Es la GPU NVIDIA**, y ninguno de los Mac la tiene.

@@ -58,3 +58,12 @@ Los archivos 3–5 van a una carpeta fuera del repo (p. ej. iCloud/AirDrop); ac�
   `20250612_2728_release` ortodoncia). "V1" es solo la etiqueta: el número de build sigue avanzando, así que la
   app no está abandonada. No actualizar sin OK: los builds nuevos exigen un driver NVIDIA específico (576.x/581.42).
 - Iconos de la barra superior: cuenta, soporte remoto, nube/sincronización y Wi-Fi (la app depende de la red).
+
+## 2026-11-07 — Pedido 2 recibido (equipo y GPU del DentalPad)
+- Equipo: **Lenovo ThinkPad P15 Gen 1** (tipo 20SU). GPU: **NVIDIA Quadro T1000 4 GB** (Turing, TU117) + Intel UHD.
+  Driver NVIDIA 595.71, CUDA 13.2 (WDDM).
+- **Hallazgo clave:** la app DL-300P (build 2496) funciona con una T1000, que rinde aproximadamente como una
+  GTX 1650 y queda muy por debajo de la "RTX 4060+" oficial. El requisito publicado es una recomendación, no un
+  mínimo duro; lo que importa es tener **NVIDIA/CUDA**, no el modelo exacto. [S] fuerte (pendiente: ¿escanea fluido?)
+- Consecuencia para el ADR: la opción C (eGPU) se abarata, porque una NVIDIA modesta (Turing o posterior, 4 GB)
+  podría bastar. La opción E sigue siendo la base: el DentalPad ya funciona.
