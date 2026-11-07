@@ -86,3 +86,11 @@ Los archivos 3–5 van a una carpeta fuera del repo (p. ej. iCloud/AirDrop); ac�
   `IOCudaDeblur` e `IOCudaPoissonNewVersion`. Detalle en el anexo de `inventario-coxo.md`.
 - El CSV completo falló porque `$HOME\Desktop` no existe (el Escritorio está redirigido, probablemente a OneDrive). Se repite con
   `[Environment]::GetFolderPath('Desktop')`.
+
+## 2026-11-07 — Listado completo y pedido 4
+- CSV completo (fuera del repo): 2.747 archivos, 12,7 GB (3,5 GB son logs). Cámaras: MindVision `MVCAMSDK.dll` 2.1.10.189 y driver
+  `MvU2Camera64.sys` 3.0.0.143 (KMDF), además de un filtro DirectShow y adaptadores Halcon. Lanzador `IOScanner.exe` (.NET, 1.0.0.0).
+- Pedido 4: con el filtro usado solo apareció la webcam integrada (`VID_13D3&PID_56FF`, usbvideo). El escáner no estaba conectado
+  o se registra con otra clase/nombre. Quedó pendiente.
+- Nicolás pregunta si conviene abandonar el proyecto para no gastar esfuerzo. Evaluación del coordinador en el mensaje de cierre;
+  pendiente su decisión.
