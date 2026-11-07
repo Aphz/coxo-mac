@@ -70,3 +70,12 @@ Los archivos 3–5 van a una carpeta fuera del repo (p. ej. iCloud/AirDrop); ac�
 - Rendimiento con la T1000 (Nicolás): escaneo **fluido** y procesado de modelos de **1 a 2 min**, sin problemas. Hubo fallas puntuales
   en módulos de **implantes** (scanbody/`upperimplant`), que parecen de software y no de GPU. Confirma que una NVIDIA de
   gama de entrada basta para uso clínico real.
+
+## 2026-11-07 — Pedido 3 (parcial): ubicación de la instalación
+- Programa instalado: **"IO Intraoral scanner"** 3.0.0 en `C:\IOscanner` (en el campo Publisher figura "3.0.0", sin nombre de fabricante).
+- Proceso de escaneo: `C:\IOscanner\Version2496\Unity\IOApp.exe` + `UnityCrashHandler64.exe`, o sea que **la app de escaneo es Unity**.
+  Implicancia: si es Unity con Mono, la lógica en C# (`*_Data\Managed\Assembly-CSharp.dll`) se puede analizar con las herramientas .NET de REA.
+  Si es IL2CPP (`GameAssembly.dll` + `global-metadata.dat`), es C++ nativo y el análisis cuesta más. La reconstrucción por GPU probablemente
+  vive en plugins nativos (`*_Data\Plugins\x86_64\*.dll`), y ahí está la dependencia CUDA. Unity tiene exportación nativa a macOS, pero
+  eso solo le sirve a Launca, que tiene el código fuente; para nosotros no aplica.
+- En el DentalPad también corre **exocad DentalCAD 9036** (`C:\Exocad-9036-FR\...\DentalShareUpload.exe`), así que el diseño CAD está en el mismo PC.
