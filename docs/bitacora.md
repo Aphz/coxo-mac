@@ -94,3 +94,12 @@ Los archivos 3–5 van a una carpeta fuera del repo (p. ej. iCloud/AirDrop); ac�
   o se registra con otra clase/nombre. Quedó pendiente.
 - Nicolás pregunta si conviene abandonar el proyecto para no gastar esfuerzo. Evaluación del coordinador en el mensaje de cierre;
   pendiente su decisión.
+
+## 2026-11-07 — Decisión: se abandona el port y el proyecto pasa a mejorar la app existente
+- ADR-001 queda **Aceptado (E)**. No se hará captura USB ni análisis REA del pipeline.
+- Nuevo foco, sin modificar los binarios de COXO ni saltarse la licencia:
+  1. Mantenimiento: 3,5 GB de logs en `C:\IOscanner\Version2496\Log`; respaldo de `sqliteDatas` y de las carpetas de escaneos/pedidos.
+  2. Actualización oficial al build 2584 (podría corregir los módulos de implantes), con respaldo previo y verificación del driver NVIDIA.
+  3. Fallas en implantes: documentarlas (pasos y mensajes) y reportarlas al soporte de COXO/Launca.
+  4. Flujo de archivos: exportaciones STL sincronizadas al Mac o al laboratorio (OneDrive/iCloud), y exocad en el mismo PC.
+  5. Acceso remoto desde el Mac (Parsec o RDP) para revisar casos sin estar en el DentalPad.

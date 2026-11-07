@@ -1,6 +1,6 @@
 # ADR-001: estrategia para usar el escáner COXO desde un Mac
 
-**Estado:** Propuesto · **Fecha:** 2026-11-07 · **Autor:** worker de estrategia (savvy-flow)
+**Estado:** Aceptado (2026-11-07): opción E. El port nativo queda descartado. · **Fecha:** 2026-11-07 · **Autor:** worker de estrategia (savvy-flow)
 **Decide:** Nicolás, con los datos de la sección 8.
 
 Leyenda (igual que en `inventario-coxo.md`): **[C]** confirmado con fuente; **[S]** supuesto o
@@ -188,3 +188,8 @@ Los STL o PLY llegan por carpeta compartida (SMB) o por la nube Launca. Opcional
 > propias (ICP, Poisson, deblur). Las cámaras son MindVision USB con driver propio (no UVC) y la UI es Unity Mono. Esto **refuerza** el
 > ADR: A y B quedan descartadas, D sería reescribir el pipeline completo (solo tiene sentido como experimento de captura de cámaras
 > MindVision), y la recomendación sigue siendo E ahora y C2 (eGPU NVIDIA modesta) si se quiere un Mac.
+
+## Decisión (2026-11-07)
+Nicolás acepta abandonar el port a macOS. Motivo: la app depende de NVIDIA (CUDA, cuDNN, TensorRT), usa cámaras MindVision con driver propio y la reconstrucción es propietaria.
+Se mantiene el DentalPad como equipo de escaneo y el proyecto pasa a **mejorar el uso de la app existente** sin modificar sus binarios:
+acceso remoto desde el Mac, flujo de archivos, mantenimiento, actualización oficial y soporte.
